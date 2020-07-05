@@ -1,4 +1,5 @@
-
+import 'package:restaurantordersystem/Screens/Table.dart';
+import 'package:restaurantordersystem/Screens/menu_mimic.dart';
 import 'package:flutter/material.dart';
 import 'package:restaurantordersystem/Screens/menu.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -26,9 +27,8 @@ class LoginState extends State<Login>{
     preferences.get("Passworda")??preferences.setString("Passworda", "123");
     _assumedPassword=preferences.get("Passworda");
     if(userName=="1"&&password=="1"){
-      Navigator.of(context).pushNamed(Menu.routeLocation);
+      Navigator.of(context).pushNamed(Rtables.routeLocation);
     }
-//    Navigator.of(context).pushNamed(Menu.routeLocation);
   }
   @override
   Widget build(BuildContext context) {
@@ -92,7 +92,7 @@ class LoginState extends State<Login>{
                             },
                             obscureText: false ,
                             decoration: InputDecoration(
-                                suffixIcon: Icon(Icons.chat)
+                                suffixIcon: Icon(Icons.perm_identity)
                             ),
                           ))
                     ],
@@ -116,7 +116,7 @@ class LoginState extends State<Login>{
                             },
                             obscureText: false ,
                             decoration: InputDecoration(
-                                suffixIcon: Icon(Icons.chat)
+                                suffixIcon: Icon(Icons.lock)
                             ),
                           ))
                     ],
